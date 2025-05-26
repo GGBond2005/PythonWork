@@ -16,9 +16,7 @@ import joblib
 warnings.filterwarnings('ignore')
 
 
-# ========================
 # 数据加载与预处理
-# ========================
 def load_data():
     (train_data, train_labels), (test_data, test_labels) = tf.keras.datasets.imdb.load_data(num_words=10000)
     all_data = np.concatenate([train_data, test_data])
@@ -54,9 +52,7 @@ class TextPreprocessor:
         return ' '.join(processed)
 
 
-# ========================
 # 特征工程（核心修复）
-# ========================
 class FeatureEngineer:
     def __init__(self, max_features=5000):
         self.vectorizer = TfidfVectorizer(max_features=max_features)
@@ -87,9 +83,7 @@ class FeatureEngineer:
             raise ValueError("特征选择器未初始化")
 
 
-# ========================
 # 模型构建（优化）
-# ========================
 class SentimentAnalyzer:
     def __init__(self):
         self.models = {
@@ -114,9 +108,7 @@ class SentimentAnalyzer:
         return y_pred
 
 
-# ========================
 # 可视化工具（不变）
-# ========================
 class Visualizer:
     @staticmethod
     def plot_metrics(models, scores):
@@ -138,9 +130,7 @@ class Visualizer:
         plt.show()
 
 
-# ========================
 # 主程序（关键修复）
-# ========================
 def main():
     # 数据加载
     (X_train, y_train), (X_dev, y_dev), (X_test, y_test) = load_data()
