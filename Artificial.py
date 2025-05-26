@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-IMDB情感分类完整实验代码（已修复特征维度问题）
-环境要求：Python 3.8+, 需要安装以下包：
-pip install numpy pandas matplotlib scikit-learn nltk tensorflow transformers
-"""
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
